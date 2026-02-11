@@ -170,7 +170,7 @@ let list = [
 
 function moyenneEleves(list) {
     for (let i = 0; i < list.length; i++){
-        p(list[i].prenom + " a une note de : " + moyenneListe(list[i].notes));    
+        console.log(list[i].prenom + " a une note de : " + moyenneListe(list[i].notes));    
     }
 }
 
@@ -186,4 +186,57 @@ function nombreOccurences(list, n) {
         }
     }
     return (resultat + " occurences");
+}
+
+function palindrome(str) {
+
+    for (let i = 0; i < (str.length / 2); i++){
+        if (str[i] !== str[str.length - 1 - i]) {
+            return false
+        }
+    }
+    return true
+}
+
+function deuxiemeGrandNombre(list) {
+    let comparateur = 0;
+    let resultat = 0;
+    for (let i = 0; i < list.length; i++){
+        if (list[i] > comparateur) {
+            resultat = comparateur;
+            comparateur = list[i];
+        }
+    }
+    return resultat;
+}
+
+function sommeChiffresNombre(n) {
+    let somme = 0;
+    while (n > 0) {
+        let chiffre = n % 10;
+        somme += chiffre;
+        n = Math.floor(n / 10);
+    }
+    return somme;
+}
+
+function dichotomique(list, n) {
+    let debut = 0;
+    let fin = list.length - 1;
+
+    while (debut <= fin) {
+        
+        let milieu = (Math.floor((debut + fin) / 2));
+        
+        if (list[milieu] === n) {
+            return milieu;
+        }
+        else if (list[milieu] < n) {
+            debut = milieu + 1;
+        }
+        else {
+            fin = milieu - 1;
+        }
+    }
+    return -1;
 }
