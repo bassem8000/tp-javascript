@@ -170,7 +170,7 @@ let list = [
 
 function moyenneEleves(list) {
     for (let i = 0; i < list.length; i++){
-        print (list[i].prenom + " a une note de : " + moyenneListe(list[i].notes));    
+        p(list[i].prenom + " a une note de : " + moyenneListe(list[i].notes));    
     }
 }
 
